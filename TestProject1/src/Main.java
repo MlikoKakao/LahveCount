@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.*;
 import java.util.Scanner;
 
@@ -46,6 +50,9 @@ public class Main {
 	case("S"):
 		lahve.remove(scanner.nextInt());
 	case("E"):
+		save("bottles.dat", lahve);
+		System.out.println("Exportováno do textového souboru");
+		break;
 	case("AVGW"):
 		System.out.println("Průměrná cena je: "+Average(lahve));
 		break;
@@ -63,6 +70,7 @@ public class Main {
 	System.out.print("Napiš Konec pokud chceš končit: ");
 	konec = scanner.next();
 	} while(!konec.equalsIgnoreCase("konec"));
+	scanner.close();
 	}
 	
 
@@ -98,5 +106,13 @@ public class Main {
 			prumerMl = sum / count;
 		}		
 		return prumerMl;
+	}
+	public static void save(String bottles, ArrayList<Lahev> lahve)  {
+		File f = new File(bottles);
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f))) {
+		oos.writeObject(lahve);
+		} catch (IOException e) {
+			System.out.println("Error saving file: "+e.getMessage());
+		}
 	}
 }
