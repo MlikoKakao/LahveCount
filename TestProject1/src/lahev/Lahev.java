@@ -1,7 +1,8 @@
 package lahev;
 
+import java.io.Serializable;
 
-public class Lahev {
+public class Lahev implements Serializable {
 	private String name;
 	private String barva;
 	private int ml;
