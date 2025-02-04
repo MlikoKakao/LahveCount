@@ -58,13 +58,14 @@ public class Main {
 			
 		
 		default: 
-			System.out.println("Nothing happened");
+			System.out.println("Nezvolil jste žádnou z akcí");
 	}
 	System.out.print("Napiš Konec pokud chceš končit: ");
 	konec = scanner.next();
 	} while(!konec.equalsIgnoreCase("konec"));
 	}
 	
+
 	public static double Average(ArrayList<Lahev> lahve) {
 		double prumer=0;
 		double sum = 0;
@@ -97,5 +98,5 @@ public class Main {
 			prumerMl = sum / count;
 		}		
 		return prumerMl;
-}
+	}
 }
