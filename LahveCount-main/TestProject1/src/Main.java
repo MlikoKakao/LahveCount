@@ -54,7 +54,7 @@ public class Main {
 		break;
 	case("S"):
 		System.out.print("Jakou láhev chceš smazat?");
-		lahve.remove(scanner.nextInt()+1);
+		lahve.remove(scanner.nextInt()-1);
 		break;
 	case("E"):
 		save("bottles.dat", lahve);
