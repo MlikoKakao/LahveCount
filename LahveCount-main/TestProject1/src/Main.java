@@ -30,11 +30,10 @@ public class Main {
 					int tCena = scanner.nextInt();
 					System.out.print("Napiš jaké je DPH: ");
 					int tDph = scanner.nextInt();
-					double dphProcento;
 
 
-					Lahev myObj = new Lahev(tJmeno, tBarva, tMl, tCena, tDph);
-					dphProcento = (100 * myObj.getDph()) / myObj.getCena();
+                    Lahev myObj = new Lahev(tJmeno, tBarva, tMl, tCena, tDph);
+                    double dphProcento = (double) (100 * myObj.getDph()) / myObj.getCena();
 					System.out.println("Název: " + myObj.getJmeno() + ", Barva: "
 							+ myObj.getBarva() + ", Ml: " + myObj.getMl() + ", Cena: " + myObj.getCena() +
 							", DPH: " + dphProcento + "%");
