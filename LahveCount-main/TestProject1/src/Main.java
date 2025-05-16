@@ -7,7 +7,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		String konec = "";
+		String konec;
 
 
 		ArrayList<Lahev> lahve = new ArrayList<>();
