@@ -42,8 +42,8 @@ public class LahevUtil{
             ArrayList<Lahev> lahve = (ArrayList<Lahev>) in.readObject();
             System.out.println("Data byla úspěšně načtena ze souboru: " + nazev);
             return lahve;
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Chyba při načítání: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Nastala chyba [" + e + "]");
             return new ArrayList<>();
         }
     }
