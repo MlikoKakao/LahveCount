@@ -49,8 +49,13 @@ public class Main {
 
                     break;
                 case "S":
-                    System.out.print("Jakou láhev chceš smazat?");
-                    lahve.remove(scanner.nextInt() - 1);
+                    try {
+                        System.out.print("Jakou láhev chceš smazat?");
+                        lahve.remove(scanner.nextInt() - 1);
+                        System.out.println("Láhev smazána!");
+                    }catch(Exception e){
+                        System.out.println("Nastala chyba [" + e + "]");
+                    }
                     break;
                 case "V":
                     if (lahve.isEmpty()) {
