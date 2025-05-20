@@ -3,13 +3,36 @@ import java.util.ArrayList;
 
 public class LahevUtil{
     public static double PrumerSDPH(ArrayList<Lahev> lahve) {
-        return lahve.stream().mapToDouble(lahev -> lahev.getCena()).average().orElse(0.0);
+        if (lahve.isEmpty()) return 0.0;
+
+        double sum = 0.0;
+        for (Lahev lahev : lahve) {
+            sum += lahev.getCena();
+        }
+
+        return sum / lahve.size();
     }
+
     public static double PrumerBezDPH(ArrayList<Lahev> lahve) {
-        return lahve.stream().mapToDouble(lahev -> lahev.getCena() - lahev.getDph()).average().orElse(0.0);
+        if (lahve.isEmpty()) return 0.0;
+
+        double sum = 0.0;
+        for (Lahev lahev : lahve) {
+            sum += lahev.getCena() - lahev.getDph();
+        }
+
+        return sum / lahve.size();
     }
+
     public static double PrumerMilil(ArrayList<Lahev> lahve) {
-        return lahve.stream().mapToDouble(Lahev::getMl).average().orElse(0.0);
+        if (lahve.isEmpty()) return 0.0;
+
+        double sum = 0.0;
+        for (Lahev lahev : lahve) {
+            sum += lahev.getMl();
+        }
+
+        return sum / lahve.size();
     }
     public static void exportDoTxt(String filename, ArrayList<Lahev> lahve) {
         File file = new File(filename);
